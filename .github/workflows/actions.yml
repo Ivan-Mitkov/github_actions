@@ -8,6 +8,14 @@ jobs:
         run: |
           pwd
           ls -la
+      # clone current repository in action
+      - name: Checkout 
+      # https://github.com/actions/checkout This action checks-out your repository under $GITHUB_WORKSPACE, so your workflow can access it.
+        uses: actions/checkout@v2   
+      - name: List files
+        run: |
+          pwd
+          ls -la 
       - name: Simple Javascript Actions
       # for referencing step
         id: greet
