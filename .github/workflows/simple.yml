@@ -1,0 +1,20 @@
+# name of the action
+name: Shell Commands
+# event triggering the action
+on: [push]
+# what to do
+jobs: 
+  run-shell-command: 
+    # on what virtual machine to run
+    runs-on: ubuntu-latest
+    # what to do step by step
+    steps: 
+    # name of the step
+      - name: echo a string
+      # on ubuntu run shell
+        run: echo "Hello github actions"
+      - name: multiline script
+      # run multiple commands with pipe |
+        run: |
+          node -v
+          npm -v
