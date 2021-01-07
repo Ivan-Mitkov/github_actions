@@ -24,3 +24,12 @@ jobs:
           print(platform.processor())     
         # inform github that the last commands should run on python
         shell: python     
+  run-windows-commands:
+    runs-on: windows-latest
+    steps:
+      - name: Print Directory Powershell
+        run: Get-Location
+      - name: Print Directory Bash
+        run: pwd
+        shell: bash  
+
