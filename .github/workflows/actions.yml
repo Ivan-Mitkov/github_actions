@@ -4,11 +4,16 @@ jobs:
   run-github-actions:
     runs-on: ubuntu-latest
     steps:
+      - name: List files
+        run: |
+          pwd
+          ls -la
       - name: Simple Javascript Actions
+      # for referencing step
         id: greet
           # uses: https://github.com/actions/hello-world-javascript-action@[version, branch or commit]
         uses: actions/hello-world-javascript-action@main
-          # provice input for the action
+          # provide input for the action
         with: 
           # from documentation
           who-to-greet: 'John'
