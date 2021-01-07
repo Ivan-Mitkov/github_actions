@@ -8,7 +8,7 @@ jobs:
         run: |
           pwd
           ls -la
-      # run commands instead using action/checkout
+          # run commands instead using action/checkout
           echo $GITHUB_SHA
           echo $GITHUB_REPOSITORY
           echo $GITHUB_WORKSPACE
