@@ -1,14 +1,5 @@
 name: Actions Workflow
-# on: [push, pull_request]
-# using types of events
-on:
-  # push:
-  schedule:
-    # - cron: "minutes hours day_of_the_month month day_of_the_week"
-    # At 12:00 on day-of-month 2 and on Sunday in April.
-    - cron: "0 12 1 4 0"
-  pull_request: 
-    types: [closed, assigned,opened,reopened]
+on: [push, pull_request]
 jobs:
   run-github-actions:
     runs-on: ubuntu-latest

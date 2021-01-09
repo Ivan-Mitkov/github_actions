@@ -1,7 +1,7 @@
 # name of the action
 name: Shell Commands
 # event triggering the action
-on: [pull_request]
+on: [push]
 # what to do
 jobs: 
   run-shell-command: 

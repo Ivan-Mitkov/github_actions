@@ -16,3 +16,31 @@ https://github.com/marketplace?type=actions
 
 https://docs.github.com/en/free-pro-team@latest/actions/reference/events-that-trigger-workflows
 
+### schedule
+
+Cron syntax has five fields separated by a space, and each field represents a unit of time.
+
+┌───────────── minute (0 - 59)
+┌───────────── hour (0 - 23)
+│ │ ┌───────────── day of the month (1 - 31)
+│ │ │ ┌───────────── month (1 - 12 or JAN-DEC)
+│ │ │ │ ┌───────────── day of the week (0 - 6 or SUN-SAT)
+│ │ │ │ │  
+│ │ │ │ │
+│ │ │ │ │
+
+---
+
+You can use these operators in any of the five fields:
+
+Operator Description Example
+
+- Any value \* \* \* \* _ runs every minute of every day.
+  , Value list separator 2,10 4,5 _ \* \* runs at minute 2 and 10 of the 4th and 5th hour of every day.
+
+* Range of values 0 4-6 \* _ * runs at minute 0 of the 4th, 5th, and 6th hour.
+  / Step values 20/15 * _ \* \* runs every 15 minutes starting from minute 20 through 59 (minutes 20, 35, and 50).
+
+#### good tool
+
+https://crontab.guru/
