@@ -1,0 +1,53 @@
+name: Actions Workflow
+on:
+  push:
+    branches: 
+    # run only if pushed to master
+      - master
+      - 'feature/*' # matches everyting that starts with feature/ and just one word
+    # ignore branch dev we can have just one branches or branches-ignore
+    # branches-ignore:
+    #   - dev 
+  pull_request:
+    branches: 
+    # run only if pull request merging to master
+      - master
+jobs:
+  run-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: List files
+        run: |
+          pwd
+          ls -la
+          # run commands instead using action/checkout
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_WORKSPACE
+          echo "${{github.token}}"
+          # not accurate just close example
+          # git clone git@github:$GITHUB_REPOSITORY
+          # git checkout $GITHUB_SHA
+      # clone current repository in action
+      - name: Checkout 
+      # https://github.com/actions/checkout This action checks-out your repository under $GITHUB_WORKSPACE, so your workflow can access it.
+        uses: actions/checkout@v2   
+      - name: List files
+        run: |
+          pwd
+          ls -la 
+      - name: Simple Javascript Actions
+      # for referencing step
+        id: greet
+          # uses: https://github.com/actions/hello-world-javascript-action@[version, branch or commit]
+        uses: actions/hello-world-javascript-action@main
+          # provide input for the action
+        with: 
+          # from documentation
+          who-to-greet: 'John'
+            # access the output
+      - name: Log greating time
+        # run a command accessing the step of the action time is from documentation
+        run: echo "${{ steps.greet.outputs.time}}"    
+
+        

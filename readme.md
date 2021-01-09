@@ -44,3 +44,11 @@ Operator Description Example
 #### good tool
 
 https://crontab.guru/
+
+#### Manual events
+
+You can manually trigger workflow runs. To trigger specific workflows in a repository, use the workflow_dispatch event. To trigger more than one workflow in a repository and create custom events and event types, use the repository_dispatch event.
+
+### filtering
+
+https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet
