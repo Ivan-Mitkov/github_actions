@@ -26,7 +26,7 @@ jobs:
         shell: python     
   run-windows-commands:
     runs-on: windows-latest
-    run sequentially, not parallel
+    # run sequentially, not parallel
     needs: [run-shell-command]
     steps:
       - name: Print Directory Powershell
