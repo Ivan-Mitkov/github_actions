@@ -1,11 +1,11 @@
 name: Actions Workflow
 on:
   push:
-    # branches: 
-    # # run only if pushed to master
-    #   - master
-    #   - 'feature/*' # matches everyting that starts with feature/ and just one word
-    #   - '!feature/ftc' # ! for ignoring branch
+    branches: 
+    # run only if pushed to master
+      - master
+      - 'feature/*' # matches everyting that starts with feature/ and just one word
+      - '!feature/ftc' # ! for ignoring branch
     # ignore branch dev we can have just one branches or branches-ignore
     # branches-ignore:
     #   - dev 
