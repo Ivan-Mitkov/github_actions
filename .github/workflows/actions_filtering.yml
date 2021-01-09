@@ -9,8 +9,8 @@ on:
     # ignore branch dev we can have just one branches or branches-ignore
     # branches-ignore:
     #   - dev 
-    paths: 
-      - '**.js' # run only if .js files is changed
+    # paths: 
+    #   - '**.js' # run only if .js files is changed
   pull_request:
     branches: 
     # run only if pull request merging to master
