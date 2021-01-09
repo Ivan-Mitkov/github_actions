@@ -6,7 +6,9 @@ on:
   schedule:
     # - cron: "minutes hours day_of_the_month month day_of_the_week"
     # At 12:00 on day-of-month 2 and on Sunday in April.
-    - cron: "0 12 1 4 0"
+    # - cron: "0 12 1 4 0"
+    # “At every 5th minute from 0 through 59.”
+    - cron: "0/5 * * * *"
   pull_request: 
     types: [closed, assigned,opened,reopened]
 jobs:
