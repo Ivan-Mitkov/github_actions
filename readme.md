@@ -52,3 +52,5 @@ You can manually trigger workflow runs. To trigger specific workflows in a repos
 ### filtering
 
 https://docs.github.com/en/free-pro-team@latest/actions/reference/workflow-syntax-for-github-actions#filter-pattern-cheat-sheet
+
+can filter on branches tags paths
