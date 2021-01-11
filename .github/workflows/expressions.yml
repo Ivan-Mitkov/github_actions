@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     # conditional running job
     # after if dont need {{}} it's expression by default
-    if: github.event_name == 'pull_request'
+    if: github.event_name == 'push'
     steps:
       - name: Dump GitHub context
         env:
