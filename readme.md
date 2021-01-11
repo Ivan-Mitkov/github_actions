@@ -58,3 +58,9 @@ can filter on branches tags paths
 ### env
 
 https://docs.github.com/en/free-pro-team@latest/actions/reference/environment-variables
+
+### encript env
+
+https://github.com/Ivan-Mitkov/github_actions/settings/secrets/actions
+
+https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets
