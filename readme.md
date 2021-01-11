@@ -64,3 +64,7 @@ https://docs.github.com/en/free-pro-team@latest/actions/reference/environment-va
 https://github.com/Ivan-Mitkov/github_actions/settings/secrets/actions
 
 https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets
+
+### Authentication in a workflow
+
+https://docs.github.com/en/free-pro-team@latest/actions/reference/authentication-in-a-workflow
