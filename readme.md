@@ -82,3 +82,7 @@ https://www.gnupg.org/gph/de/manual/r1023.html
 ### expressions and context
 
 https://docs.github.com/en/free-pro-team@latest/actions/reference/context-and-expression-syntax-for-github-actions
+
+### functions
+
+https://docs.github.com/en/free-pro-team@latest/actions/reference/context-and-expression-syntax-for-github-actions#functions
