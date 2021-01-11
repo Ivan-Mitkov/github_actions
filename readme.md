@@ -59,7 +59,7 @@ can filter on branches tags paths
 
 https://docs.github.com/en/free-pro-team@latest/actions/reference/environment-variables
 
-### encript env
+### encrypt env
 
 https://github.com/Ivan-Mitkov/github_actions/settings/secrets/actions
 
@@ -68,3 +68,15 @@ https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secr
 ### Authentication in a workflow
 
 https://docs.github.com/en/free-pro-team@latest/actions/reference/authentication-in-a-workflow
+
+### encrypt files
+
+https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets
+
+encrypt files on local machine
+
+https://gnupg.org/download/index.html
+
+https://www.gnupg.org/gph/de/manual/r1023.html
+
+
