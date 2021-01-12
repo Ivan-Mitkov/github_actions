@@ -9,11 +9,26 @@ jobs:
         node-version: [6,8,10]
         # run on different operating systems
         os: [macos-latest,ubuntu-latest,windows-latest]
+        # exclude and include include only add extra configuration for values already exixsting in the matrix
+        include:
+          - os: macos-latest
+            node-version: 10
+            is_macos_10: true
+        exclude:
+          - os: ubuntu-latest
+            node-version: 6
+          - os: macos-latest
+            node-version: 8
+          - os: windows-latest
+            node-version: 10
       # true -if one job fails all fails, if it's 'false' they will run independently  
       fail-fast: false  
       # how many jobs will run in prallel
-      max-parallel: 1
+      max-parallel: 5
     runs-on: ${{matrix.os}}
+    # this env set to true only when running on mac and node 10
+    env:
+      IS_MACOS_10: ${{matrix.is_macos_10}}
     steps:
       - name: Log node version
         run: node -v
@@ -21,4 +36,6 @@ jobs:
         with:
           node-version: ${{matrix.node-version}}
       - name: Log node version
-        run: node -v
+        run: |
+          node -v
+          echo $IS_MACOS_10
