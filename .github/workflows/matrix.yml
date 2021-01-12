@@ -2,12 +2,23 @@ name: Matrix
 on: push
 jobs:
   node-version:
-    runs-on: ubuntu-latest
+    strategy:
+    #run this job for every version in matrix - so in this case 3 times
+      matrix:
+        #arbitrary key names
+        node-version: [6,8,10]
+        # run on different operating systems
+        os: [macos-latest,ubuntu-latest,windows-latest]
+      # true -if one job fails all fails, if it's 'false' they will run independently  
+      fail-fast: false  
+      # how many jobs will run in prallel
+      max-parallel: 1
+    runs-on: ${{matrix.os}}
     steps:
       - name: Log node version
         run: node -v
       - uses: actions/setup-node@v2
         with:
-          node-version: '8'
+          node-version: ${{matrix.node-version}}
       - name: Log node version
         run: node -v
