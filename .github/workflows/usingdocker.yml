@@ -15,8 +15,8 @@ jobs:
         - "27017:27017"
     # we cab have env,ports, volumes, options
       image: node:alpine
-    steps:
-      - name: Post a User
-        run: "curl -X POST http://localhost:3001/api/user -H 'Content-Type: application/json' -d '{\"username\": \"hello\",\"address\": \"dwded\"}'"
-      - name: Get Users
-        run: curl localhost:3001/api/users
+  steps:
+    - name: Post a User
+      run: "curl -X POST http://localhost:3001/api/user -H 'Content-Type: application/json' -d '{\"username\": \"hello\",\"address\": \"dwded\"}'"
+    - name: Get Users
+      run: curl localhost:3001/api/users
