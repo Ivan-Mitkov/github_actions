@@ -13,15 +13,20 @@ jobs:
           echo ${{format('Hello {0} {1}{2}','World','!','!')}}
   one:
     runs-on: ubuntu-latest
+    # the maximum amount of minutes that this job will run before github cancels it
+    # can be used in steps not only in jobs
+    timeout-minutes: 360
     # conditional running job
     # after if dont need {{}} it's expression by default
     if: github.event_name == 'push'
     steps:
       - name: Dump GitHub context
+     
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
-        # wrong command this job will fail
         run: echo "$GITHUB_CONTEXT"
+         # all other steps will run even in failure
+        continue-on-error: true
       - name: Dump job context
         # return true only if previos step fails
         if: failure()
