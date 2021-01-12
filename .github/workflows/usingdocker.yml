@@ -1,20 +1,28 @@
 name: Using_Docker
 on: push
 jobs:
-  node_docker:
+  node-docker:
     runs-on: ubuntu-latest
-      # image from docker-hub
-  services:
-    app:
-      image: alialaa17/node-api
-      ports:
-        - 3001:3000
-    mongo:
-      image: mongo
-      ports:
-        - "27017:27017"
-  steps:
-    - name: Post a User
-      run: "curl -X POST http://localhost:3001/api/user -H 'Content-Type: application/json' -d '{\"username\": \"hello\",\"address\": \"dwded\"}'"
-    - name: Get Users
-      run: curl localhost:3001/api/users
+    container: node:13.5.0-alpine3.10
+    steps:
+      - name: Log node version
+        # sibling container
+        run: |
+          node -v
+          cat /etc/os-release
+  docker-services: 
+    runs-on: ubuntu-latest
+    services:
+      app: 
+        image: alialaa17/node-api
+        ports:
+          - 3001:3000
+      mongo:
+        image: mongo
+        ports:
+          - "27017:27017"
+    steps:
+      - name: Post a User
+        run: "curl -X POST http://localhost:3001/api/user -H 'Content-Type: application/json' -d '{\"username\": \"hello\",\"address\": \"dwded\"}'"
+      - name: Get Users
+        run: curl localhost:3001/api/users
