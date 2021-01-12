@@ -1,0 +1,14 @@
+name: Using_Docker
+on: push
+jobs:
+  node_docker:
+    runs-on: ubuntu-latest
+      # image from docker-hub
+    container: 
+    # we cab have env,ports, volumes, options
+      image: node:alpine
+    steps:
+      - name: log node version
+        run: |
+          node -v
+          cat /etc/os-release
