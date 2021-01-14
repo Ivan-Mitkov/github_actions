@@ -115,4 +115,14 @@ adress spooky-love.surge.sh
 
 when deploy again it will generate new domain so we remeved the new domain an replace with first domain
 
-###
+### Using prettier
+
+install prettier globally or in the project
+
+make configuration file
+
+https://prettier.io/playground/
+
+prettier --check "**/*.js"
+prettier --write "**/*.js"
+
