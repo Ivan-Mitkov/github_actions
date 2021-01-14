@@ -33,7 +33,7 @@ jobs:
         #overright the entrypoint command using with
         with: 
         #entrypoint in github actions is RELATIVE path to executable script file from the ROOT folder to run the command in terminal BEFORE commiting chmod +x script.sh 
-          entrypoint: './script.sh'
+          entrypoint: 'sh ./script.sh'
           args: 'Passed Args'
   node-docker:
     runs-on: ubuntu-latest
