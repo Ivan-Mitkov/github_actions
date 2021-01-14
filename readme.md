@@ -96,3 +96,23 @@ https://github.com/actions/setup-node
 ### update git permission
 
 git update-index --chmod +x ./script.sh
+
+## Install surge for deployment
+
+npm install --g surge
+
+then run:
+
+surge
+
+make an account
+
+and publish react-app/build
+
+https://surge.sh/help/getting-started-with-surge
+
+adress spooky-love.surge.sh
+
+when deploy again it will generate new domain so we remeved the new domain an replace with first domain
+
+###
