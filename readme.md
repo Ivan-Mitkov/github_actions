@@ -92,3 +92,7 @@ https://docs.github.com/en/free-pro-team@latest/actions/reference/context-and-ex
 ##### change node version
 
 https://github.com/actions/setup-node
+
+### update git permission
+
+git update-index --chmod +x ./script.sh
