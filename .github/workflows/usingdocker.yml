@@ -1,6 +1,31 @@
 name: Using_Docker
 on: push
 jobs:
+  docker-steps:
+    runs-on: ubuntu-latest
+    container:
+      image: node:10.18.0-jessie
+      # next step run without specified container so it uses 10.18.0
+    steps:
+      - name: log node version
+        run: node -v
+        # here we are using container to run this step
+      - name: step with docker
+      #run this container when this step executes
+        uses: docker://node:12.14.1-alpine3.10
+        #overright the entrypoint command using with
+        with: 
+        #entrypoint in github actions is path to executable
+          entrypoint: '/bin/echo'
+          args: 'Hello world from docker container'
+      - name: Log node version
+      #second step
+        uses: docker://node:12.14.1-alpine3.10
+        #overright the entrypoint command using with
+        with: 
+        #entrypoint in github actions is path to executable node-v is run in container node
+          entrypoint: '/usr/local/bin/node'
+          args: '-v'
   node-docker:
     runs-on: ubuntu-latest
     container: node:13.5.0-alpine3.10
