@@ -26,6 +26,15 @@ jobs:
         #entrypoint in github actions is path to executable node-v is run in container node
           entrypoint: '/usr/local/bin/node'
           args: '-v'
+          # to run script need to have access to our files so checkout
+      - uses: actions/checkout@v1   
+      - name: Run a script
+        uses: docker://node:12.14.1-alpine3.10
+        #overright the entrypoint command using with
+        with: 
+        #entrypoint in github actions is RELATIVE path to executable script file from the ROOT folder to run the command in terminal BEFORE commiting chmod +x script.sh 
+          entrypoint: './script.sh'
+          args: 'Passed Args'
   node-docker:
     runs-on: ubuntu-latest
     container: node:13.5.0-alpine3.10
